@@ -1,16 +1,12 @@
 package simple.http.server;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UncheckedIOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.concurrent.Executors;
 
-public class BlockingHttpServer {
+public class NIONonBlockingHttpServer {
 
     public static void main(String[] args) throws IOException {
         var socket = ServerSocketChannel.open();

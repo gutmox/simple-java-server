@@ -11,3 +11,4 @@
 rootProject.name = "simple-java-server"
 include("old-server")
 include("http-server")
+include("virtualthreads-http-server")
