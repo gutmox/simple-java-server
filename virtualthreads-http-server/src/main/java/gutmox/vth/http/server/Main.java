@@ -14,7 +14,8 @@ public class Main {
 
     private static void runServer() throws IOException {
         HttpServer httpServer = HttpServer.create(new InetSocketAddress(8080), 0);
-        httpServer.createContext("/example", new SimpleHandler());
+        httpServer.createContext("/health", new SimpleHandler());
+        httpServer.createContext("/file", new FIleNioReaderHandler());
         httpServer.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
         httpServer.start();
     }
