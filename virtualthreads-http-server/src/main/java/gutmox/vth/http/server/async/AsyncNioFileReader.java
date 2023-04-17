@@ -27,7 +27,7 @@ public class AsyncNioFileReader {
         future.join();
     }
 
-    private static void readFile(String filename) {
+    public static void readFile(String filename) {
         var path = Paths.get(Objects.requireNonNull(AsyncNioFileReader.class.getClassLoader().getResource(filename)).getPath());
         try (AsynchronousFileChannel channel = AsynchronousFileChannel.open(path)) {
             ByteBuffer buffer = ByteBuffer.allocate(1024);

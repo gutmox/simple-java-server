@@ -16,6 +16,7 @@ public class Main {
         HttpServer httpServer = HttpServer.create(new InetSocketAddress(8080), 0);
         httpServer.createContext("/health", new SimpleHandler());
         httpServer.createContext("/file", new FIleNioReaderHandler());
+        httpServer.createContext("/postgres", new VersionPostgresHandler());
         httpServer.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
         httpServer.start();
     }
